@@ -21,20 +21,22 @@ const users = [
 // DOKUMENTACJA
 // https://ramdajs.com/docs/
 
+// element.addEventListener("click", (e) => {}())
+
 // CWICZENIE 1
 // Stworz sume wszystkich numerow w array
-const sum = numbers.reduce((acc, number) => acc + number, 0);
+const sum = numbers.reduce(R.add, 0);
 
 console.log(sum);
 
 // CWICZENIE 2
 // Stworz array skladajacy sie jedynie z wartosci "hair" userow
-const usersHair = users.map((user) => user.hair);
+const usersHair = users.map(R.prop("hair"));
 
 console.log(usersHair);
 
 // CWICZENIE 3
 // Stworz array userow o dokladnie jednym kolorze wlosow: "black"
-const usersOfHair = users.filter((user) => user.hair === "black");
+const usersOfHair = users.filter(R.propEq("black", "hair"));
 
 console.log(usersOfHair);
